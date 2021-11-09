@@ -2,7 +2,7 @@
   <div class="home">
     <Header />
     <Main />
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -20,3 +20,16 @@ export default {
   },
 };
 </script>
+
+<style>
+:root {
+  --color-rose: #fa705c;
+  --color-gray: #455a64;
+  --color-small-gray: #f2f2f2;
+  --color-white: #ffffff;
+}
+
+.home {
+  width: 100%;
+}
+</style>
