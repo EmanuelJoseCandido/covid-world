@@ -1,7 +1,5 @@
 <template>
   <main>
-    <img src="../assets/gif/person-cold.gif" alt="person-cold" />
-    <h1>Site em construção</h1>
   </main>
 </template>
 

@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Header />
+    <Hero />
     <Main />
     <Footer />
   </div>
@@ -8,6 +9,7 @@
 
 <script>
 import Header from "../components/Header.vue";
+import Hero from "../components/Hero.vue";
 import Main from "../components/Main.vue";
 import Footer from "../components/Footer.vue";
 
@@ -15,6 +17,7 @@ export default {
   name: "Home",
   components: {
     Header,
+    Hero,
     Main,
     Footer,
   },
@@ -30,7 +33,8 @@ export default {
   --color-white: #ffffff;
 }
 
-.home {
+.home,
+.hero {
   width: 100%;
 }
 </style>
