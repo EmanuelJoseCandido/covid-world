@@ -22,8 +22,25 @@
     <div class="numbers-covid">
       <div class="item cases">
         <div class="numbers">
-          <p>{{ covid.cases.total }}</p>
-          <small v-if="covid.cases.new != 0">+{{ covid.cases.new }}</small>
+          <p>
+            <number
+              :from="0"
+              :to="covid.cases.total"
+              :format="theFormat"
+              :duration="5"
+              :delay="2"
+              easing="Power1.easeOut"
+            />
+          </p>
+          <small v-if="covid.cases.new != 0"
+            >+<number
+              :from="0"
+              :to="covid.cases.new"
+              :format="theFormat"
+              :duration="5"
+              :delay="2"
+              easing="Power1.easeOut"
+          /></small>
         </div>
         <div class="text">
           <h2>Confirmados</h2>
@@ -31,10 +48,25 @@
       </div>
       <div class="item recovered">
         <div class="numbers">
-          <p>{{ covid.cases.total }}</p>
+          <p>
+            <number
+              :from="0"
+              :to="covid.recovered.total"
+              :format="theFormat"
+              :duration="5"
+              :delay="2"
+              easing="Power1.easeOut"
+            />
+          </p>
           <small v-if="covid.recovered.new != 0"
-            >+{{ covid.recovered.new }}</small
-          >
+            >+<number
+              :from="0"
+              :to="covid.recovered.new"
+              :format="theFormat"
+              :duration="5"
+              :delay="2"
+              easing="Power1.easeOut"
+          /></small>
         </div>
         <div class="text">
           <h2>Recuperados</h2>
@@ -42,8 +74,25 @@
       </div>
       <div class="item deaths">
         <div class="numbers">
-          <p>{{ covid.cases.total }}</p>
-          <small v-if="covid.deaths.new != 0">+{{ covid.deaths.new }}</small>
+          <p>
+            <number
+              :from="0"
+              :to="covid.deaths.total"
+              :format="theFormat"
+              :duration="5"
+              :delay="2"
+              easing="Power1.easeOut"
+            />
+          </p>
+          <small v-if="covid.deaths.new != 0"
+            >+<number
+              :from="0"
+              :to="covid.deaths.new"
+              :format="theFormat"
+              :duration="5"
+              :delay="2"
+              easing="Power1.easeOut"
+          /></small>
         </div>
         <div class="text">
           <h2>Óbitos</h2>
@@ -51,8 +100,25 @@
       </div>
       <div class="item active">
         <div class="numbers">
-          <p>{{ covid.cases.total }}</p>
-          <small v-if="covid.active.new != 0">+{{ covid.active.new }}</small>
+          <p>
+            <number
+              :from="0"
+              :to="covid.active.total"
+              :format="theFormat"
+              :duration="5"
+              :delay="2"
+              easing="Power1.easeOut"
+            />
+          </p>
+          <small v-if="covid.active.new != 0"
+            >+<number
+              :from="0"
+              :to="covid.active.new"
+              :format="theFormat"
+              :duration="5"
+              :delay="2"
+              easing="Power1.easeOut"
+          /></small>
         </div>
         <div class="text">
           <h2>Activos</h2>
@@ -62,9 +128,35 @@
   </div>
 </template>
 <script>
+import http from "../services/http";
 
 export default {
   name: "Hero",
+
+  created() {
+    http
+      .get("https://corona.lmao.ninja/v2/all")
+      .then((data) => {
+        let covid = data.data;
+
+        this.covid.cases.new = covid.todayCases;
+        this.covid.cases.total = covid.cases;
+
+        this.covid.recovered.new = covid.todayRecovered;
+        this.covid.recovered.total = covid.recovered;
+
+        this.covid.deaths.new = covid.todayDeaths;
+        this.covid.deaths.total = covid.deaths;
+
+        this.covid.active.total = covid.active;
+
+        console.log(covid);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {});
+  },
 
   data() {
     return {
@@ -135,6 +227,8 @@ export default {
   text-decoration: none;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: 0.5rem 0.5rem 2rem 0 rgba(8, 15, 41, 0.08),
+    0 0 1px 0 rgba(8, 15, 41, 0.08);
   transition: all 650ms ease-in-out;
 }
 
@@ -150,13 +244,14 @@ export default {
   width: 60%;
   border-radius: 10px;
   font-style: italic;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
-    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  box-shadow: 0.5rem 0.5rem 2rem 0 rgba(8, 15, 41, 0.08),
+    0 0 1px 0 rgba(8, 15, 41, 0.08);
 }
 
 .hero .numbers-covid div.item {
   text-align: center;
   margin-left: -45px;
+  margin-top: 10px;
 }
 
 .hero .numbers-covid div.item .numbers {
@@ -174,16 +269,16 @@ export default {
   font-size: 12pt;
   font-weight: lighter;
   position: absolute;
-  margin: 20px 0 0 90px;
+  margin-top: 10px;
 }
 
 .hero .numbers-covid div.item .text {
-  margin-top: -30px;
-  margin-bottom: 30px;
+  margin-top: -20px;
 }
 
 .hero .numbers-covid div.item .text h2 {
   font-size: 12pt;
   font-weight: lighter;
+  margin-top: -10px;
 }
 </style>
