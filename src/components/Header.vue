@@ -13,12 +13,12 @@
 
       <div class="container-nav">
         <ul class="links">
-          <li><a href="#start">Início</a></li>
-          <li><a href="#decrees">Decretos</a></li>
-          <li><a href="#commission">Comissão Multissectorial</a></li>
-          <li><a href="#emergency" class="emergency">Emergência</a></li>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#decretos">Decretos</a></li>
+          <li><a href="#comissao">Comissão Multissectorial</a></li>
+          <li><a href="#emergencia" class="emergency">Emergência</a></li>
         </ul>
-        <div class="footer-nav" id="start">
+        <div class="footer-nav" id="inicio">
           <p>Copyright &copy; {{ anoActual }}</p>
         </div>
       </div>
@@ -115,7 +115,7 @@ header .links .emergency {
     padding: 6px 20px;
     color: var(--color-red);
     border: 1px solid var(--color-red);
-    border-radius: 7px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 650ms ease-in-out;
 }
@@ -134,7 +134,6 @@ header .footer-nav p {
 }
 
 @media screen and (min-width: 858px) {
-    /* Header */
     header .links {
         width: initial;
         height: initial;
@@ -177,7 +176,5 @@ header .footer-nav p {
     header .footer-nav {
         display: none;
     }
-
-    /* Header */
 }
 </style>
