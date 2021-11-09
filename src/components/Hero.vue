@@ -12,7 +12,12 @@
         </div>
 
         <div class="emergency">
-          <a href="#emergencia" class="emergency">Ligar para emergência</a>
+          <a
+            href="#emergencia"
+            class="emergency"
+            @click="openModal('emergência')"
+            >Ligar para emergência</a
+          >
         </div>
       </div>
       <div class="svg">
@@ -128,12 +133,15 @@
     </div>
 
     <div class="more-information">
-      <a href="#data" class="data">Ver mais dados</a>
+      <a href="#data" class="data" @click="openModal('ver mais dados')"
+        >Ver mais dados</a
+      >
     </div>
   </div>
 </template>
 <script>
 import http from "../services/http";
+import ModalBuildPage from "./ModalBuildPage.vue";
 
 export default {
   name: "Hero",
@@ -163,6 +171,7 @@ export default {
 
   data() {
     return {
+      showModal: false,
       covid: {
         cases: {
           new: 0,
@@ -187,6 +196,10 @@ export default {
   methods: {
     formatNumber(number) {
       return Number(number).toLocaleString("pt-br");
+    },
+
+    openModal(page) {
+      this.$modal.show(ModalBuildPage, { page: page });
     },
   },
 };

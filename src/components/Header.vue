@@ -13,10 +13,23 @@
 
       <div class="container-nav">
         <ul class="links">
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#decretos">Decretos</a></li>
-          <li><a href="#comissao">Comissão Multissectorial</a></li>
-          <li><a href="#emergencia" class="emergency">Emergência</a></li>
+          <li><a href="#inicio" @click="openModal('inicio')">Início</a></li>
+          <li>
+            <a href="#decretos" @click="openModal('decreto')">Decretos</a>
+          </li>
+          <li>
+            <a href="#comissao" @click="openModal('c.multissectorial')"
+              >Comissão Multissectorial</a
+            >
+          </li>
+          <li>
+            <a
+              href="#emergencia"
+              class="emergency"
+              @click="openModal('emergência')"
+              >Emergência</a
+            >
+          </li>
         </ul>
         <div class="footer-nav" id="inicio">
           <p>Copyright &copy; {{ anoActual }}</p>
@@ -27,12 +40,19 @@
 </template>
 
 <script>
+import ModalBuildPage from "./ModalBuildPage.vue";
 export default {
   name: "Header",
   data() {
     return {
       anoActual: new Date().getFullYear(),
     };
+  },
+
+  methods: {
+    openModal(page) {
+      this.$modal.show(ModalBuildPage, { page: page });
+    },
   },
 };
 </script>
@@ -45,7 +65,7 @@ header {
   background: var(--color-white);
   width: 100%;
   position: fixed;
-  z-index: 1900;
+  z-index: 1;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
     0 1px 3px 1px rgba(60, 64, 67, 0.15);
   height: 4rem;
@@ -71,110 +91,110 @@ header {
 }
 
 header .links {
-    width: 15rem;
-    height: 90vh;
-    background: var(--color-white);
-    position: fixed;
-    top: 48px;
-    left: -22rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    z-index: 1500;
-    margin-left: -100px;
-    transition: all 650ms ease-in-out;
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  width: 15rem;
+  height: 90vh;
+  background: var(--color-white);
+  position: fixed;
+  top: 48px;
+  left: -22rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  z-index: 1;
+  margin-left: -100px;
+  transition: all 650ms ease-in-out;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
 }
 
 .links.open {
-    left: 3.5rem;
+  left: 3.5rem;
 }
 
-
 header .links li a {
-    color: var(--color-gray);
-    text-decoration: none;
-    transition: all 0.5s ease-in-out;
+  color: var(--color-gray);
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
 }
 
 header .links li a:hover {
-    color: var(--color-red);
+  color: var(--color-red);
 }
 
 header .links li {
-    list-style: none;
-    margin: 30px;
+  list-style: none;
+  margin: 30px;
 }
 
 header .links .social li {
-    margin: 0px;
+  margin: 0px;
 }
 
 header .links .emergency {
-    padding: 6px 20px;
-    color: var(--color-red);
-    border: 1px solid var(--color-red);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 650ms ease-in-out;
+  padding: 6px 20px;
+  color: var(--color-red);
+  border: 1px solid var(--color-red);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 650ms ease-in-out;
 }
 
 header .links .emergency:hover {
-    background: var(--color-red);
-    color: var(--color-white);
+  background: var(--color-red);
+  color: var(--color-white);
 }
 
 header .footer-nav {
-    margin-left: -40px;
+  margin-left: -40px;
 }
 
 header .footer-nav p {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 @media screen and (min-width: 858px) {
-    header .links {
-        width: initial;
-        height: initial;
-        position: initial;
-        top: initial;
-        right: initial;
-        display: flex;
-        flex-direction: row;
-        transition: initial;
-        background: transparent;
-        margin-top: 10px;
-        box-shadow: none;
-    }
+  header .links {
+    width: initial;
+    height: initial;
+    position: initial;
+    top: initial;
+    right: initial;
+    display: flex;
+    flex-direction: row;
+    transition: initial;
+    background: transparent;
+    margin-top: 10px;
+    box-shadow: none;
+  }
 
-    header {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-    header .menu-icons.open {
-        display: none;
-    }
+  header .menu-icons.open {
+    display: none;
+  }
 
-    header .links .menu {
-        display: flex;
-        flex-wrap: nowrap;
-    }
+  header .links .menu {
+    display: flex;
+    flex-wrap: nowrap;
+  }
 
-    header .links li {
-        display: inline-block;
-        padding: 18px 15px;
-    }
+  header .links li {
+    display: inline-block;
+    padding: 18px 15px;
+  }
 
-    header .links li {
-        list-style: none;
-        margin: initial;
-    }
+  header .links li {
+    list-style: none;
+    margin: initial;
+  }
 
-    header .footer-nav {
-        display: none;
-    }
+  header .footer-nav {
+    display: none;
+  }
 }
 </style>
