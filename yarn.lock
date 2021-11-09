@@ -4311,6 +4311,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
   integrity sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==
 
+gsap@^3.6.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.8.0.tgz#a404dd6ebbaabc92605539aea9d98e3098688064"
+  integrity sha512-cvpzKkWFePDZCycwXwJnDSpTR3j+a4QLQF/t0c+pXqzRESgAYx5hieaoshzZFjbwsARqr0+5c3GKE7wI273w/g==
+
 gzip-size@^5.0.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-5.1.1.tgz#cb9bee692f87c0612b232840a873904e4c135274"
@@ -8425,6 +8430,13 @@ vue-loader@^15.9.2:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-number-animation@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-number-animation/-/vue-number-animation-1.1.1.tgz#785d35b8cbd349919265fb98ced566c388d5753b"
+  integrity sha512-xSYZZ50dbfQa0MPtDMECCkPSe6jDU56gPIBRXzfu9G/lFaCMzWyMokRQiHHK3/H/2WXdWGwnuZjpdphurtAHAg==
+  dependencies:
+    gsap "^3.6.0"
 
 vue-router@^3.2.0:
   version "3.5.3"
