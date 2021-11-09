@@ -99,7 +99,7 @@ header .links li a {
 }
 
 header .links li a:hover {
-    color: var(--color-rose);
+    color: var(--color-red);
 }
 
 header .links li {
@@ -111,38 +111,29 @@ header .links .social li {
     margin: 0px;
 }
 
-header .links .contacto {
-    padding: 9px 25px;
-    background-color: rgb(241, 196, 15);
-    color: var(--color-rose);
-    border: none;
-    border-radius: 8px;
+header .links .emergency {
+    padding: 6px 20px;
+    color: var(--color-red);
+    border: 1px solid var(--color-red);
+    border-radius: 7px;
     cursor: pointer;
-    box-shadow: 1px 2px 5px var(--color-rose);
     transition: all 650ms ease-in-out;
 }
 
-header .links .contacto:hover {
-    background: var(--cor-roxa);
-    color: var(--cor-branca);
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+header .links .emergency:hover {
+    background: var(--color-red);
+    color: var(--color-white);
 }
 
-header .links .footer-nav {
+header .footer-nav {
     margin-left: -40px;
 }
 
-header .links .footer-nav p {
+header .footer-nav p {
     margin-left: 40px;
-    font-family: "Arial Rounded MT STD LIGTH";
 }
 
 @media screen and (min-width: 858px) {
-    h1 {
-        font-size: 25pt;
-        text-transform: uppercase;
-    }
-
     /* Header */
     header .links {
         width: initial;

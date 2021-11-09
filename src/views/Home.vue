@@ -23,6 +23,7 @@ export default {
 
 <style>
 :root {
+  --color-red: #ea4659;
   --color-rose: #fa705c;
   --color-gray: #455a64;
   --color-small-gray: #f2f2f2;
