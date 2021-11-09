@@ -19,6 +19,7 @@
         <img src="../assets/gif/person-cold.gif" alt="pessoa-doente" />
       </div>
     </div>
+
     <div class="numbers-covid">
       <div class="item cases">
         <div class="numbers">
@@ -26,20 +27,20 @@
             <number
               :from="0"
               :to="covid.cases.total"
-              :format="theFormat"
+              :format="formatNumber"
               :duration="5"
               :delay="2"
-              easing="Power1.easeOut"
+              easing="Elastic.easeOut"
             />
           </p>
           <small v-if="covid.cases.new != 0"
             >+<number
               :from="0"
               :to="covid.cases.new"
-              :format="theFormat"
+              :format="formatNumber"
               :duration="5"
               :delay="2"
-              easing="Power1.easeOut"
+              easing="Elastic.easeOut"
           /></small>
         </div>
         <div class="text">
@@ -52,20 +53,20 @@
             <number
               :from="0"
               :to="covid.recovered.total"
-              :format="theFormat"
+              :format="formatNumber"
               :duration="5"
               :delay="2"
-              easing="Power1.easeOut"
+              easing="Elastic.easeOut"
             />
           </p>
           <small v-if="covid.recovered.new != 0"
             >+<number
               :from="0"
               :to="covid.recovered.new"
-              :format="theFormat"
+              :format="formatNumber"
               :duration="5"
               :delay="2"
-              easing="Power1.easeOut"
+              easing="Elastic.easeOut"
           /></small>
         </div>
         <div class="text">
@@ -78,20 +79,20 @@
             <number
               :from="0"
               :to="covid.deaths.total"
-              :format="theFormat"
+              :format="formatNumber"
               :duration="5"
               :delay="2"
-              easing="Power1.easeOut"
+              easing="Elastic.easeOut"
             />
           </p>
           <small v-if="covid.deaths.new != 0"
             >+<number
               :from="0"
               :to="covid.deaths.new"
-              :format="theFormat"
+              :format="formatNumber"
               :duration="5"
               :delay="2"
-              easing="Power1.easeOut"
+              easing="Elastic.easeOut"
           /></small>
         </div>
         <div class="text">
@@ -104,26 +105,30 @@
             <number
               :from="0"
               :to="covid.active.total"
-              :format="theFormat"
+              :format="formatNumber"
               :duration="5"
               :delay="2"
-              easing="Power1.easeOut"
+              easing="Elastic.easeOut"
             />
           </p>
           <small v-if="covid.active.new != 0"
             >+<number
               :from="0"
               :to="covid.active.new"
-              :format="theFormat"
+              :format="formatNumber"
               :duration="5"
               :delay="2"
-              easing="Power1.easeOut"
+              easing="Elastic.easeOut"
           /></small>
         </div>
         <div class="text">
           <h2>Activos</h2>
         </div>
       </div>
+    </div>
+
+    <div class="more-information">
+      <a href="#data" class="data">Ver mais dados</a>
     </div>
   </div>
 </template>
@@ -149,8 +154,6 @@ export default {
         this.covid.deaths.total = covid.deaths;
 
         this.covid.active.total = covid.active;
-
-        console.log(covid);
       })
       .catch((error) => {
         console.log(error);
@@ -179,6 +182,12 @@ export default {
         },
       },
     };
+  },
+
+  methods: {
+    formatNumber(number) {
+      return Number(number).toLocaleString("pt-br");
+    },
   },
 };
 </script>
@@ -218,7 +227,8 @@ export default {
   margin-top: 40px;
 }
 
-.hero .container .content .emergency a {
+.hero .container .content .emergency a,
+.hero .more-information .data {
   width: 100px;
   padding: 8px 20px;
   background: var(--color-red);
@@ -232,7 +242,8 @@ export default {
   transition: all 650ms ease-in-out;
 }
 
-.hero .container .content .emergency a:hover {
+.hero .container .content .emergency a:hover,
+.hero .more-information .data:hover {
   background: var(--color-white);
   color: var(--color-red);
 }
@@ -250,8 +261,7 @@ export default {
 
 .hero .numbers-covid div.item {
   text-align: center;
-  margin-left: -45px;
-  margin-top: 10px;
+  margin: 10px 0 0 -10px;
 }
 
 .hero .numbers-covid div.item .numbers {
@@ -280,5 +290,24 @@ export default {
   font-size: 12pt;
   font-weight: lighter;
   margin-top: -10px;
+}
+
+.hero .numbers-covid .cases p,
+.hero .numbers-covid .cases small {
+  color: var(--color-red);
+}
+
+.hero .numbers-covid .recovered p,
+.hero .numbers-covid .recovered small {
+  color: var(--color-green);
+}
+
+.hero .numbers-covid .active p,
+.hero .numbers-covid .active small {
+  color: var(--color-rose);
+}
+
+.hero .more-information {
+  margin-top: 25px;
 }
 </style>
