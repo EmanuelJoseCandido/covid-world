@@ -3,18 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import VueNumber from "vue-number-animation";
-import { vfmPlugin } from "vue-final-modal";
+import VModal from "vue-js-modal";
 
 Vue.config.productionTip = false;
 Vue.use(VueNumber);
-
-Vue.use(
-  vfmPlugin({
-    key: "$vfm",
-    componentName: "VueFinalModal",
-    dynamicContainerName: "ModalsContainer",
-  })
-);
+Vue.use(VModal);
 
 new Vue({
   router,
