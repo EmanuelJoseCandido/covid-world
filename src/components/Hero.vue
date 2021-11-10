@@ -16,7 +16,8 @@
             href="#emergencia"
             class="emergency"
             @click="openModal('emergência')"
-            >Ligar para emergência</a
+            ><span class="hidden">Ligar para </span>
+            <span class="uppercase">e</span>mergência</a
           >
         </div>
       </div>
@@ -219,13 +220,23 @@ export default {
 .hero .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .hero .container .content,
 .hero .container .svg {
   width: 50%;
-  padding: 0 150px;
+}
+
+.hero .container .content {
+  padding-left: 100px;
+}
+
+.hero .container .svg {
+  padding-right: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero .container .content .text h1 {
@@ -274,7 +285,7 @@ export default {
 
 .hero .numbers-covid div.item {
   text-align: center;
-  margin: 10px 0 0 -10px;
+  padding: 10px;
 }
 
 .hero .numbers-covid div.item .numbers {
@@ -322,5 +333,80 @@ export default {
 
 .hero .more-information {
   margin-top: 25px;
+}
+
+@media screen and (max-width: 1116px) {
+  .hero .container {
+    margin: 50px 0px;
+  }
+
+  .hero .container .svg img {
+    width: 80%;
+  }
+
+  .hero .container .content .text h1 {
+    font-size: 18pt;
+  }
+}
+
+@media screen and (max-width: 858px) {
+  .hero .container {
+    margin: 20px 0px;
+    padding: 10px 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero .container .content {
+    padding-left: 0px;
+    padding: 10px 50px;
+    width: 100%;
+  }
+
+  .hero .container .content .text p {
+    text-align: center;
+  }
+
+  .hero .container .svg {
+    display: none;
+  }
+
+  .hero .numbers-covid {
+    width: 90%;
+  }
+
+  .hero .more-information {
+    margin: 40px 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .hero .container,
+  .hero .container .content {
+    padding: 10px;
+  }
+
+  .hero .container .content .text h1 {
+    font-size: 14pt;
+  }
+
+  .hero .numbers-covid div.item .numbers p {
+    font-size: 15pt;
+    font-weight: bolder;
+  }
+
+  .hero .numbers-covid div.item .numbers small {
+    font-size: 12pt;
+    margin-top: 0px;
+  }
 }
 </style>
