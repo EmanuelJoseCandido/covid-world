@@ -16,9 +16,17 @@
             href="#emergencia"
             class="emergency"
             @click="openModal('emergência')"
-            ><span class="hidden">Ligar para </span>
-            <span class="uppercase">e</span>mergência</a
           >
+            <v-icon
+              name="phone-alt"
+              class="icon"
+              title="Ligar para emergência"
+            />
+            <span class="text">
+              <span class="hidden"> Ligar para </span>
+              <span class="uppercase"> e</span>mergência
+            </span>
+          </a>
         </div>
       </div>
       <div class="svg">
@@ -134,9 +142,10 @@
     </div>
 
     <div class="more-information">
-      <a href="#data" class="data" @click="openModal('ver mais dados')"
-        >Ver mais dados</a
-      >
+      <a href="#data" class="data" @click="openModal('ver mais dados')">
+        <v-icon name="plus" class="icon" title="Ver mais dados" />
+        <span class="text"> Ver mais dados </span>
+      </a>
     </div>
   </div>
 </template>
@@ -270,6 +279,10 @@ export default {
 .hero .more-information .data:hover {
   background: var(--color-white);
   color: var(--color-red);
+}
+
+.hero .more-information .icon {
+  display: none;
 }
 
 .hero .numbers-covid {
@@ -407,6 +420,17 @@ export default {
   .hero .numbers-covid div.item .numbers small {
     font-size: 12pt;
     margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .hero .container .content .emergency .text,
+  .hero .more-information .text {
+    display: none;
+  }
+
+  .hero .more-information .icon {
+    display: initial;
   }
 }
 </style>

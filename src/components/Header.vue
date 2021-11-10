@@ -27,7 +27,12 @@
               href="#emergencia"
               class="emergency"
               @click="openModal('emergência')"
-              >Emergência</a
+              ><v-icon
+                name="phone-alt"
+                class="icon"
+                title="Ligar para emergência"
+              />
+              Emergência</a
             >
           </li>
         </ul>
