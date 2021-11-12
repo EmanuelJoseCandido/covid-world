@@ -1,0 +1,23 @@
+Um website que apresenta os dados da Covid-19 em tempo real.
+
+
+Mas também encontrar lá os decretos do estado de emergência 
+e os vídeos publicados no YouTube pela comissão multisectorial
+
+https://github.com/johndatserakis/vue-navigation-bar
+https://vue-burger-menu.netlify.app/#
+https://johndatserakis.github.io/vue-navigation-bar/#/
+http://zeratulmdq.github.io/vue-accordion/
+https://github.com/euvl/vue-js-popover
+https://terryz.github.io/vue/#/selectmenu
+https://github.com/TerryZ/v-selectmenu
+
+https://www.youtube.com/channel/UC7QLMVuPz9lg-0-_8YDm88A - CIAM
+
+http://www.youtube.com/watch?v={video_id_here}
+
+320
+180
+
+https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwENLyoscBz2Nl_L9HWNvAIzLDinUxh8&&q=covid-19&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date
+https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwENLyoscBz2Nl_L9HWNvAIzLDinUxh8&&q=covid-19&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date&maxResults=20
