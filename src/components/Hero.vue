@@ -42,8 +42,7 @@
               :from="0"
               :to="covid.cases.total"
               :format="formatNumber"
-              :duration="5"
-              :delay="2"
+              :duration="2"
               easing="Elastic.easeOut"
             />
           </p>
@@ -52,8 +51,7 @@
               :from="0"
               :to="covid.cases.new"
               :format="formatNumber"
-              :duration="5"
-              :delay="2"
+              :duration="2"
               easing="Elastic.easeOut"
           /></small>
         </div>
@@ -68,8 +66,7 @@
               :from="0"
               :to="covid.recovered.total"
               :format="formatNumber"
-              :duration="5"
-              :delay="2"
+              :duration="2"
               easing="Elastic.easeOut"
             />
           </p>
@@ -78,8 +75,7 @@
               :from="0"
               :to="covid.recovered.new"
               :format="formatNumber"
-              :duration="5"
-              :delay="2"
+              :duration="2"
               easing="Elastic.easeOut"
           /></small>
         </div>
@@ -94,8 +90,7 @@
               :from="0"
               :to="covid.deaths.total"
               :format="formatNumber"
-              :duration="5"
-              :delay="2"
+              :duration="2"
               easing="Elastic.easeOut"
             />
           </p>
@@ -104,8 +99,7 @@
               :from="0"
               :to="covid.deaths.new"
               :format="formatNumber"
-              :duration="5"
-              :delay="2"
+              :duration="2"
               easing="Elastic.easeOut"
           /></small>
         </div>
@@ -120,8 +114,7 @@
               :from="0"
               :to="covid.active.total"
               :format="formatNumber"
-              :duration="5"
-              :delay="2"
+              :duration="2"
               easing="Elastic.easeOut"
             />
           </p>
@@ -130,8 +123,7 @@
               :from="0"
               :to="covid.active.new"
               :format="formatNumber"
-              :duration="5"
-              :delay="2"
+              :duration="2"
               easing="Elastic.easeOut"
           /></small>
         </div>
@@ -157,26 +149,7 @@ export default {
   name: "Hero",
 
   created() {
-    http
-      .get("https://corona.lmao.ninja/v2/all")
-      .then((data) => {
-        let covid = data.data;
-
-        this.covid.cases.new = covid.todayCases;
-        this.covid.cases.total = covid.cases;
-
-        this.covid.recovered.new = covid.todayRecovered;
-        this.covid.recovered.total = covid.recovered;
-
-        this.covid.deaths.new = covid.todayDeaths;
-        this.covid.deaths.total = covid.deaths;
-
-        this.covid.active.total = covid.active;
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {});
+    this.getAllData();
   },
 
   data() {
@@ -200,6 +173,9 @@ export default {
           total: 0,
         },
       },
+      api: {
+        world: null,
+      },
     };
   },
 
@@ -211,10 +187,35 @@ export default {
     openModal(page) {
       this.$modal.show(ModalBuildPage, { page: page });
     },
+
+    getAllData() {
+      http
+        .get("https://corona.lmao.ninja/v2/all")
+        .then((data) => {
+          this.api.world = data.data;
+          this.covid.cases.new = this.api.world.todayCases;
+          this.covid.cases.total = this.api.world.cases;
+
+          this.covid.recovered.new = this.api.world.todayRecovered;
+          this.covid.recovered.total = this.api.world.recovered;
+
+          this.covid.deaths.new = this.api.world.todayDeaths;
+          this.covid.deaths.total = this.api.world.deaths;
+
+          this.covid.active.total = this.api.world.active;
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          this.api.isLoadingCountry = false;
+        });
+    },
   },
 };
 </script>
 
+<style src="../assets/css/vue-multiselect/vue-multiselect.css"></style>
 <style>
 .hero {
   width: 100%;
