@@ -67,7 +67,6 @@ export default {
     });
 
     document.body.addEventListener("click", (event) => {
-      console.log(event.target.classList[0]);
       if (
         containerNav.classList.item(1) == "open" &&
         event.target.classList[0] != "container-nav" &&
