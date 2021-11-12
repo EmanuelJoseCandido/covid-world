@@ -1,27 +1,21 @@
 <template>
   <main>
+    <MultisectorialCommission />
+    <NumbersCovid />
   </main>
 </template>
 
 <script>
-//import http from "../services/http";
+import MultisectorialCommission from "../components/MultisectorialCommission.vue";
+import NumbersCovid from "../components/NumbersCovid.vue";
 
 export default {
   name: "Main",
 
-  /* created() {
-    http
-      .get("countries/Angola?yesterday=true&strict=true&query")
-      .then((data) => {
-        console.log(data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {});
-  }, */
-
-  methods: {},
+  components: {
+    MultisectorialCommission,
+    NumbersCovid,
+  },
 };
 </script>
 <style scoped>
@@ -32,9 +26,10 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 20px;
 }
 
-main h1{
-    font-style: italic;
+main h1 {
+  font-style: italic;
 }
 </style>
