@@ -41,7 +41,8 @@ export default {
 }
 
 .home,
-.hero {
+.hero,
+.main {
   width: 100%;
 }
 </style>
