@@ -35,7 +35,7 @@ export default {
   --color-red: #ea4659;
   --color-green: #42b984;
   --color-rose: #fa705c;
-  --color-gray: #455a64;
+  --color-gray: #2c3e50;
   --color-small-gray: #f2f2f2;
   --color-white: #ffffff;
 }
@@ -44,5 +44,6 @@ export default {
 .hero,
 .main {
   width: 100%;
+  font-style: italic;
 }
 </style>

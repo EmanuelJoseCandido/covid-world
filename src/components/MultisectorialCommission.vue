@@ -24,16 +24,16 @@ export default {
 </script>
 <style scoped>
 .commission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 30px 0px 50px 0px;
   background: var(--color-small-gray);
 }
 
 .commission .introduction {
-  padding: 0 140px;
-}
-
-.commission .introduction h2 {
-  text-align: center;
+  padding: 0 100px;
 }
 
 .commission .introduction p {
@@ -44,9 +44,10 @@ export default {
   width: 100%;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 858px) {
   .commission .introduction {
-    padding: 0 40px;
+    padding: 0px;
+    width: 90%;
   }
 }
 </style>

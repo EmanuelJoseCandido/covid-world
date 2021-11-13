@@ -283,7 +283,6 @@ export default {
   flex-wrap: wrap;
   width: 60%;
   border-radius: 10px;
-  font-style: italic;
   box-shadow: 0.5rem 0.5rem 2rem 0 rgba(8, 15, 41, 0.08),
     0 0 1px 0 rgba(8, 15, 41, 0.08);
 }
@@ -360,17 +359,11 @@ export default {
     padding: 10px 0px;
     align-items: center;
     justify-content: center;
-    text-align: center;
   }
 
   .hero .container .content {
     padding-left: 0px;
-    padding: 10px 50px;
-    width: 100%;
-  }
-
-  .hero .container .content .text p {
-    text-align: center;
+    width: 90%;
   }
 
   .hero .container .svg {

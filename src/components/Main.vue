@@ -29,7 +29,4 @@ main {
   margin-top: 20px;
 }
 
-main h1 {
-  font-style: italic;
-}
 </style>

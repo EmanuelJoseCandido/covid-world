@@ -1,6 +1,6 @@
 <template>
   <div class="numbers-covid-19">
-    <h2>Números covid</h2>
+    <!-- <h2>Números Covid</h2> -->
     <div class="container">
       <div class="countries">
         <div class="select">
@@ -119,9 +119,6 @@
 
       <div class="tables">
         <table>
-          <caption>
-            Estado do Covid-19 nos Continentes
-          </caption>
           <thead>
             <tr>
               <th class=""></th>
@@ -547,8 +544,8 @@ export default {
 
 <style>
 .numbers-covid-19 {
+  margin: 20px 0;
   width: 100%;
-  font-style: italic;
 }
 
 .numbers-covid-19 .container {
@@ -574,7 +571,6 @@ export default {
   flex-wrap: wrap;
   width: 50%;
   border-radius: 10px;
-  font-style: italic;
   box-shadow: 0.5rem 0.5rem 2rem 0 rgba(8, 15, 41, 0.08),
     0 0 1px 0 rgba(8, 15, 41, 0.08);
 }
@@ -643,22 +639,10 @@ table thead {
   display: table-header-group;
 }
 
-td {
-  border: 1px solid var(--color-small-gray);
-}
-
-table thead th:nth-child(5) {
-  border-radius: 0px 8px 0px 0px;
-}
-
-table thead th:nth-child(1) {
-  border-radius: 8px 0px 0px 0px;
-}
-
 table thead th {
   padding: 10px;
-  background: var(--color-small-gray);
-  color: #e84c3d;
+  background: var(--color-gray);
+  color: var(--color-white);
 }
 
 table tbody {
@@ -675,6 +659,7 @@ table tbody tr td {
   font-weight: 400;
   padding: 10px;
   text-align: left;
+  border: 1px solid var(--color-gray);
 }
 
 .tables {
@@ -686,10 +671,10 @@ table tbody tr td {
 
 table tbody tr td:nth-child(1) {
   text-align: left;
-  background-color: var(--color-small-gray);
+  background-color: var(--color-gray);
   border-radius: initial;
   box-shadow: initial;
-  color: #e84c3d;
+  color: var(--color-white);
   font-weight: bold;
 }
 
@@ -699,7 +684,13 @@ table tbody tr td:before {
 
 @media screen and (max-width: 858px) {
   .numbers-covid-19 .numbers-covid {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .numbers-covid-19 .container .countries .select {
     width: 90%;
+    margin: 10px 0;
   }
 
   #numbers .info-covid .tables {
@@ -719,7 +710,7 @@ table tbody tr td:before {
     margin-top: 30px;
     margin-bottom: 20px;
     font-size: 13pt;
-    color: #e84c3d;
+    font-weight: 600;
   }
 
   table thead {
@@ -728,7 +719,7 @@ table tbody tr td:before {
   }
 
   table tbody tr {
-    border: 2px solid var(--color-small-gray);
+    border: 1px solid var(--color-gray);
     border-radius: 5px;
     display: block;
     padding: 30px;
@@ -747,8 +738,8 @@ table tbody tr td:before {
   table tbody tr td:nth-child(1) {
     text-align: center;
     padding: 9px 25px;
-    background-color: var(--color-small-gray);
-    color: #e84c3d;
+    background-color: var(--color-gray);
+    color: var(--color-white);
     border: none;
     border-radius: 50px;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
@@ -757,12 +748,19 @@ table tbody tr td:before {
   }
 
   table tbody tr td:before {
-    color: #e1e3e4;
+    color: #2c3e50;
     content: attr(data-label);
     font-weight: 400;
     left: 5px;
     position: absolute;
   }
+
+  table tbody tr td:nth-child(2),
+  table tbody tr td:nth-child(3),
+  table tbody tr td:nth-child(4) {
+    border-bottom: 0px;
+  }
+
   /* Numbers */
 }
 
