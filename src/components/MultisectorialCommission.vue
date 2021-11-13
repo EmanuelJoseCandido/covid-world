@@ -10,45 +10,26 @@
       </p>
     </div>
 
-    <div class="videos-covid-commission"></div>
+    <IframesYoutube />
   </div>
 </template>
 <script>
-//import https from "../services/https";
-
+import IframesYoutube from "./IframesYoutube.vue";
 export default {
   name: "MultisectorialCommission",
-
-  /* created() {
-    https
-      .get(
-        "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwENLyoscBz2Nl_L9HWNvAIzLDinUxh8&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date&maxResults=5&q=covid-19"
-      )
-      .then((data) => {
-        let channelVideos = data.data.items;
-
-        for (const iterator of channelVideos) {
-          console.log("*******************************************");
-          console.log("video id: " + iterator.id.videoId);
-          console.log("titulo: " + iterator.snippet.title);
-          console.log("descricao: " + iterator.snippet.description);
-          console.log("url img: " + iterator.snippet.thumbnails.medium.url);
-          console.log("publicado em: " + iterator.snippet.publishTime);
-          console.log("Canal: " + iterator.snippet.channelTitle);
-          console.log("*******************************************\n");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {});
-  }, */
+  components: {
+    IframesYoutube,
+  },
 };
 </script>
 <style scoped>
 .commission {
-  padding: 20px 40px;
+  padding: 30px 0px 50px 0px;
   background: var(--color-small-gray);
+}
+
+.commission .introduction {
+  padding: 0 140px;
 }
 
 .commission .introduction h2 {
@@ -57,5 +38,15 @@ export default {
 
 .commission .introduction p {
   text-align: justify;
+}
+
+.commission .videos-covid {
+  width: 100%;
+}
+
+@media screen and (max-width: 880px) {
+  .commission .introduction {
+    padding: 0 40px;
+  }
 }
 </style>
