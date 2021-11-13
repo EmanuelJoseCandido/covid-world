@@ -21,3 +21,13 @@ http://www.youtube.com/watch?v={video_id_here}
 
 https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwENLyoscBz2Nl_L9HWNvAIzLDinUxh8&&q=covid-19&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date
 https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwENLyoscBz2Nl_L9HWNvAIzLDinUxh8&&q=covid-19&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date&maxResults=20
+
+
+console.log("*******************************************");
+          console.log("video id: " + iterator.id.videoId);
+          console.log("titulo: " + iterator.snippet.title);
+          console.log("descricao: " + iterator.snippet.description);
+          console.log("url img: " + iterator.snippet.thumbnails.medium.url);
+          console.log("publicado em: " + iterator.snippet.publishTime);
+          console.log("Canal: " + iterator.snippet.channelTitle);
+          console.log("*******************************************\n");
