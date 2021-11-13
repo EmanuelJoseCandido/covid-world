@@ -12,11 +12,7 @@
         </div>
 
         <div class="emergency">
-          <a
-            href="#emergencia"
-            class="emergency"
-            @click="openModal('emergência')"
-          >
+          <a href="tel:111" class="emergency">
             <v-icon
               name="phone-alt"
               class="icon"
@@ -134,7 +130,7 @@
     </div>
 
     <div class="more-information">
-      <a href="#data" class="data" @click="openModal('ver mais dados')">
+      <a href="#numbers-covid-19" class="data">
         <v-icon name="plus" class="icon" title="Ver mais dados" />
         <span class="text"> Ver mais dados </span>
       </a>
@@ -143,8 +139,6 @@
 </template>
 <script>
 import http from "../services/http";
-import ModalBuildPage from "./ModalBuildPage.vue";
-
 export default {
   name: "Hero",
 
@@ -184,10 +178,6 @@ export default {
       return Number(number).toLocaleString("pt-br");
     },
 
-    openModal(page) {
-      this.$modal.show(ModalBuildPage, { page: page });
-    },
-
     getAllData() {
       http
         .get("https://corona.lmao.ninja/v2/all")
@@ -214,6 +204,7 @@ export default {
   },
 };
 </script>
+
 
 <style src="../assets/css/vue-multiselect/vue-multiselect.css"></style>
 <style>

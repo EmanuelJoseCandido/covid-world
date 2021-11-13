@@ -28,9 +28,8 @@
           </li>
           <li>
             <a
-              href="#emergencia"
+              href="tel:111"
               class="emergency"
-              @click="openModal('emergência')"
               ><v-icon
                 name="phone-alt"
                 class="icon"
