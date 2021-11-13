@@ -741,7 +741,7 @@ table tbody tr td:before {
     padding: 5px;
     position: relative;
     text-align: right;
-    color: #e1e3e4;
+    color: var(--color-gray);
   }
 
   table tbody tr td:nth-child(1) {
