@@ -133,49 +133,237 @@
           <tbody>
             <tr>
               <td><span>África</span></td>
-              <td data-label="Casos">{{ covid.cases.africa.total }}</td>
-              <td data-label="Recup.">{{ covid.recovered.africa.total }}</td>
-              <td data-label="Óbitos">{{ covid.deaths.africa.total }}</td>
-              <td data-label="Ativos">{{ covid.active.africa.total }}</td>
+              <td data-label="Casos">
+                <number
+                  :from="0"
+                  :to="covid.cases.africa.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Recup.">
+                <number
+                  :from="0"
+                  :to="covid.recovered.africa.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Óbitos">
+                <number
+                  :from="0"
+                  :to="covid.deaths.africa.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Ativos">
+                <number
+                  :from="0"
+                  :to="covid.active.africa.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
             </tr>
             <tr>
               <td><span>América do Norte</span></td>
-              <td data-label="Casos">{{ covid.cases.northAmerica.total }}</td>
-              <td data-label="Recup.">
-                {{ covid.recovered.northAmerica.total }}
+              <td data-label="Casos">
+                <number
+                  :from="0"
+                  :to="covid.cases.northAmerica.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
               </td>
-              <td data-label="Óbitos">{{ covid.deaths.northAmerica.total }}</td>
-              <td data-label="Ativos">{{ covid.active.northAmerica.total }}</td>
+              <td data-label="Recup.">
+                <number
+                  :from="0"
+                  :to="covid.recovered.northAmerica.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Óbitos">
+                <number
+                  :from="0"
+                  :to="covid.deaths.northAmerica.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Ativos">
+                <number
+                  :from="0"
+                  :to="covid.active.northAmerica.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
             </tr>
             <tr>
               <td><span>América do Sul</span></td>
-              <td data-label="Casos">{{ covid.cases.southAmerica.total }}</td>
-              <td data-label="Recup.">
-                {{ covid.recovered.southAmerica.total }}
+              <td data-label="Casos">
+                <number
+                  :from="0"
+                  :to="covid.cases.southAmerica.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
               </td>
-              <td data-label="Óbitos">{{ covid.deaths.southAmerica.total }}</td>
-              <td data-label="Ativos">{{ covid.active.southAmerica.total }}</td>
+              <td data-label="Recup.">
+                <number
+                  :from="0"
+                  :to="covid.recovered.southAmerica.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Óbitos">
+                <number
+                  :from="0"
+                  :to="covid.deaths.southAmerica.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Ativos">
+                <number
+                  :from="0"
+                  :to="covid.active.southAmerica.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
             </tr>
             <tr>
               <td><span>Ásia</span></td>
-              <td data-label="Casos">{{ covid.cases.asia.total }}</td>
-              <td data-label="Recup.">{{ covid.recovered.asia.total }}</td>
-              <td data-label="Óbitos">{{ covid.deaths.asia.total }}</td>
-              <td data-label="Ativos">{{ covid.active.asia.total }}</td>
+              <td data-label="Casos">
+                <number
+                  :from="0"
+                  :to="covid.cases.asia.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Recup.">
+                <number
+                  :from="0"
+                  :to="covid.recovered.asia.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Óbitos">
+                <number
+                  :from="0"
+                  :to="covid.deaths.asia.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Ativos">
+                <number
+                  :from="0"
+                  :to="covid.active.asia.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
             </tr>
             <tr>
               <td><span>Europa</span></td>
-              <td data-label="Casos">{{ covid.cases.europe.total }}</td>
-              <td data-label="Recup.">{{ covid.recovered.europe.total }}</td>
-              <td data-label="Óbitos">{{ covid.deaths.europe.total }}</td>
-              <td data-label="Ativos">{{ covid.active.europe.total }}</td>
+              <td data-label="Casos">
+                <number
+                  :from="0"
+                  :to="covid.cases.europe.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Recup.">
+                <number
+                  :from="0"
+                  :to="covid.recovered.europe.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Óbitos">
+                <number
+                  :from="0"
+                  :to="covid.deaths.europe.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Ativos">
+                <number
+                  :from="0"
+                  :to="covid.active.europe.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
             </tr>
             <tr>
               <td class="ocenia"><span>Oceania</span></td>
-              <td data-label="Casos">{{ covid.cases.oceania.total }}</td>
-              <td data-label="Recup.">{{ covid.recovered.oceania.total }}</td>
-              <td data-label="Óbitos">{{ covid.deaths.oceania.total }}</td>
-              <td data-label="Ativos">{{ covid.active.oceania.total }}</td>
+              <td data-label="Casos">
+                <number
+                  :from="0"
+                  :to="covid.cases.oceania.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Recup.">
+                <number
+                  :from="0"
+                  :to="covid.recovered.oceania.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Óbitos">
+                <number
+                  :from="0"
+                  :to="covid.deaths.oceania.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
+              <td data-label="Ativos">
+                <number
+                  :from="0"
+                  :to="covid.active.oceania.total"
+                  :format="formatNumber"
+                  :duration="1"
+                  easing="Elastic.easeOut"
+                />
+              </td>
             </tr>
           </tbody>
         </table>
@@ -645,6 +833,15 @@ table thead th {
   color: var(--color-white);
 }
 
+table thead th:nth-child(1) {
+  border-top-left-radius: 8px;
+  border-left: 1px solid var(--color-gray);
+}
+
+table thead th:nth-child(5) {
+  border-top-right-radius: 8px;
+}
+
 table tbody {
   font-size: 0.875em;
 }
@@ -659,7 +856,20 @@ table tbody tr td {
   font-weight: 400;
   padding: 10px;
   text-align: left;
+  font-weight: bolder;
   border: 1px solid var(--color-gray);
+}
+
+table tbody tr td:nth-child(2) {
+  color: var(--color-red);
+}
+
+table tbody tr td:nth-child(3) {
+  color: var(--color-green);
+}
+
+table tbody tr td:nth-child(5) {
+  color: var(--color-rose);
 }
 
 .tables {
@@ -728,7 +938,7 @@ table tbody tr td:before {
 
   table tbody tr td {
     display: block;
-    font-weight: 500;
+    font-weight: 550;
     padding: 5px;
     position: relative;
     text-align: right;
@@ -741,8 +951,7 @@ table tbody tr td:before {
     background-color: var(--color-gray);
     color: var(--color-white);
     border: none;
-    border-radius: 50px;
-    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
+    border-radius: 10px;
     margin-top: -45px;
     margin-bottom: 20px;
   }
