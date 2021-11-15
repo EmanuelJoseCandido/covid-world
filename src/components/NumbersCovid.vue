@@ -125,13 +125,13 @@
               <th class="">Confirmados</th>
               <th class="">Recuperados</th>
               <th class="">Óbitos</th>
-              <th class="">Ativos</th>
+              <th class="">Activos</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><span>África</span></td>
-              <td data-label="Casos">
+              <td data-label="Confirmados">
                 <number
                   :from="0"
                   :to="covid.cases.africa.total"
@@ -140,7 +140,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Recup.">
+              <td data-label="Recuperados">
                 <number
                   :from="0"
                   :to="covid.recovered.africa.total"
@@ -158,7 +158,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Ativos">
+              <td data-label="Activos">
                 <number
                   :from="0"
                   :to="covid.active.africa.total"
@@ -170,7 +170,7 @@
             </tr>
             <tr>
               <td><span>América do Norte</span></td>
-              <td data-label="Casos">
+              <td data-label="Confirmados">
                 <number
                   :from="0"
                   :to="covid.cases.northAmerica.total"
@@ -179,7 +179,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Recup.">
+              <td data-label="Recuperados">
                 <number
                   :from="0"
                   :to="covid.recovered.northAmerica.total"
@@ -197,7 +197,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Ativos">
+              <td data-label="Activos">
                 <number
                   :from="0"
                   :to="covid.active.northAmerica.total"
@@ -209,7 +209,7 @@
             </tr>
             <tr>
               <td><span>América do Sul</span></td>
-              <td data-label="Casos">
+              <td data-label="Confirmados">
                 <number
                   :from="0"
                   :to="covid.cases.southAmerica.total"
@@ -218,7 +218,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Recup.">
+              <td data-label="Recuperados">
                 <number
                   :from="0"
                   :to="covid.recovered.southAmerica.total"
@@ -236,7 +236,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Ativos">
+              <td data-label="Activos">
                 <number
                   :from="0"
                   :to="covid.active.southAmerica.total"
@@ -248,7 +248,7 @@
             </tr>
             <tr>
               <td><span>Ásia</span></td>
-              <td data-label="Casos">
+              <td data-label="Confirmados">
                 <number
                   :from="0"
                   :to="covid.cases.asia.total"
@@ -257,7 +257,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Recup.">
+              <td data-label="Recuperados">
                 <number
                   :from="0"
                   :to="covid.recovered.asia.total"
@@ -275,7 +275,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Ativos">
+              <td data-label="Activos">
                 <number
                   :from="0"
                   :to="covid.active.asia.total"
@@ -287,7 +287,7 @@
             </tr>
             <tr>
               <td><span>Europa</span></td>
-              <td data-label="Casos">
+              <td data-label="Confirmados">
                 <number
                   :from="0"
                   :to="covid.cases.europe.total"
@@ -296,7 +296,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Recup.">
+              <td data-label="Recuperados">
                 <number
                   :from="0"
                   :to="covid.recovered.europe.total"
@@ -314,7 +314,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Ativos">
+              <td data-label="Activos">
                 <number
                   :from="0"
                   :to="covid.active.europe.total"
@@ -326,7 +326,7 @@
             </tr>
             <tr>
               <td class="ocenia"><span>Oceania</span></td>
-              <td data-label="Casos">
+              <td data-label="Confirmados">
                 <number
                   :from="0"
                   :to="covid.cases.oceania.total"
@@ -335,7 +335,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Recup.">
+              <td data-label="Recuperados">
                 <number
                   :from="0"
                   :to="covid.recovered.oceania.total"
@@ -353,7 +353,7 @@
                   easing="Elastic.easeOut"
                 />
               </td>
-              <td data-label="Ativos">
+              <td data-label="Activos">
                 <number
                   :from="0"
                   :to="covid.active.oceania.total"
