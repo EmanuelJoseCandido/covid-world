@@ -143,7 +143,7 @@ export default {
   name: "Hero",
 
   created() {
-    //this.getAllData();
+    this.getAllData();
   },
 
   data() {
