@@ -7,7 +7,7 @@
       backgroundColor="linear-gradient(to right, #fa705c, #ea4659)"
     />
     <back-to-top bottom="30px">
-      <button type="button" class="back-to-top">
+      <button type="button" class="back-to-top" aria-label="back-to-top">
         <v-icon name="chevron-up" class="icon" />
       </button>
     </back-to-top>
