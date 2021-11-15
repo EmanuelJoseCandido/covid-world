@@ -138,7 +138,7 @@
   </div>
 </template>
 <script>
-import http from "../services/http";
+import api from "../services/api";
 export default {
   name: "Hero",
 
@@ -179,8 +179,8 @@ export default {
     },
 
     getAllData() {
-      http
-        .get("https://corona.lmao.ninja/v2/all")
+      api
+        .get("https://disease.sh/v3/covid-19/all")
         .then((data) => {
           this.api.world = data.data;
           this.covid.cases.new = this.api.world.todayCases;

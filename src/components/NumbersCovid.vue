@@ -372,8 +372,7 @@
   </div>
 </template>
 <script>
-import http from "../services/http";
-import https from "../services/https";
+import api from "../services/api";
 import Multiselect from "vue-multiselect";
 export default {
   name: "NumbersCovid",
@@ -532,7 +531,7 @@ export default {
     },
 
     getCodeISO() {
-      https
+      api
         .get(
           "https://api.ipdata.co/?api-key=68202fe14f4c400b719bad0626e5e74a476af993e8b0b808619e3f32"
         )
@@ -545,8 +544,8 @@ export default {
     },
 
     getDataOfContinents() {
-      https
-        .get("https://corona.lmao.ninja/v2/continents")
+      api
+        .get("https://disease.sh/v3/covid-19/continents")
         .then((data) => {
           let continents = data.data;
 
@@ -663,8 +662,8 @@ export default {
 
     getDataAllCountries() {
       this.api.isLoadingCountry = true;
-      http
-        .get("https://corona.lmao.ninja/v2/countries?sort")
+      api
+        .get("https://disease.sh/v3/covid-19/countries?sort")
         .then((data) => {
           this.api.countries.push({ country: "Todos" });
 
@@ -700,10 +699,8 @@ export default {
     },
 
     getDataCountryAPI(country) {
-      http
-        .get(
-          `https://corona.lmao.ninja/v2/countries/${country}?strict=true&query`
-        )
+      api
+        .get(`https://disease.sh/v3/covid-19/countries/${country}`)
         .then((data) => {
           this.api.selectedCountry = data.data;
           this.api.country = this.api.selectedCountry;
