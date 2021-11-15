@@ -130,7 +130,7 @@
     </div>
 
     <div class="more-information">
-      <a href="#numbers-covid-19" class="data">
+      <a href="#" v-scroll-to="'#numbers-covid-19'" class="data">
         <v-icon name="plus" class="icon" title="Ver mais dados" />
         <span class="text"> Ver mais dados </span>
       </a>
@@ -143,7 +143,7 @@ export default {
   name: "Hero",
 
   created() {
-    this.getAllData();
+    //this.getAllData();
   },
 
   data() {

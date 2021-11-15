@@ -1,7 +1,7 @@
 <template>
   <header>
-    <div class="logo">
-      <a href="#">
+    <div class="logo" id="inicio">
+      <a href="#" v-scroll-to="'#inicio'">
         <img src="../assets/logos/covid-19.png" alt="logo-covid" />
       </a>
     </div>
@@ -17,19 +17,15 @@
             <v-icon name="times" class="icon times" />
           </div>
 
-          <li><a href="#inicio" @click="openModal('inicio')">Início</a></li>
+          <li><a href="#" v-scroll-to="'#inicio'">Início</a></li>
           <li>
-            <a href="#decretos" @click="openModal('decreto')">Decretos</a>
+            <a href="#" v-scroll-to="'#comissao'">Comissão Multissectorial</a>
           </li>
           <li>
-            <a href="#comissao" @click="openModal('c.multissectorial')"
-              >Comissão Multissectorial</a
-            >
+            <a href="#" v-scroll-to="'#decretos'">Decretos</a>
           </li>
           <li>
-            <a
-              href="tel:111"
-              class="emergency"
+            <a href="tel:111" class="emergency"
               ><v-icon
                 name="phone-alt"
                 class="icon"
@@ -39,7 +35,7 @@
             >
           </li>
         </ul>
-        <div class="footer-nav" id="inicio">
+        <div class="footer-nav">
           <p>Copyright &copy; {{ anoActual }}</p>
         </div>
       </div>
@@ -48,7 +44,6 @@
 </template>
 
 <script>
-import ModalBuildPage from "./ModalBuildPage.vue";
 export default {
   name: "Header",
 
@@ -81,12 +76,6 @@ export default {
     return {
       anoActual: new Date().getFullYear(),
     };
-  },
-
-  methods: {
-    openModal(page) {
-      this.$modal.show(ModalBuildPage, { page: page });
-    },
   },
 };
 </script>

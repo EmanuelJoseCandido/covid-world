@@ -1,5 +1,5 @@
 <template>
-  <div class="numbers-covid-19">
+  <div class="numbers-covid-19" id="numbers-covid-19">
     <!-- <h2>Números Covid</h2> -->
     <div class="container">
       <div class="countries">
