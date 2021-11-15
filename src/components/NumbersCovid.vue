@@ -122,10 +122,8 @@
           <thead>
             <tr>
               <th class=""></th>
-              <th class="">
-                <span class="pc">Confirmados</span>
-              </th>
-              <th class="">Recup<span class="pc">erados</span></th>
+              <th class="">Confirmados</th>
+              <th class="">Recuperados</th>
               <th class="">Óbitos</th>
               <th class="">Ativos</th>
             </tr>
@@ -885,10 +883,6 @@ table tbody tr td:nth-child(1) {
   font-weight: bold;
 }
 
-table tbody tr td:before {
-  display: none;
-}
-
 @media screen and (max-width: 858px) {
   .numbers-covid-19 .numbers-covid {
     width: 100%;
@@ -956,7 +950,7 @@ table tbody tr td:before {
   table tbody tr td:before {
     color: #2c3e50;
     content: attr(data-label);
-    font-weight: 400;
+    font-weight: 600;
     left: 5px;
     position: absolute;
   }
