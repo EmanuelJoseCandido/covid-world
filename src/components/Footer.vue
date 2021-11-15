@@ -145,9 +145,6 @@ footer .info .container ul {
   padding: 0;
 }
 
-footer .info .container ul li {
-}
-
 footer .info .container ul li a {
   color: var(--color-gray);
   text-decoration: none;
