@@ -12,14 +12,9 @@ import Header from "../components/Header.vue";
 import Hero from "../components/Hero.vue";
 import Main from "../components/Main.vue";
 import Footer from "../components/Footer.vue";
-import ModalBuildWebSite from "../components/ModalBuildWebSite.vue";
 
 export default {
   name: "Home",
-
-  mounted() {
-    this.$modal.show(ModalBuildWebSite);
-  },
 
   components: {
     Header,
