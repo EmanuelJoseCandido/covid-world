@@ -1,7 +1,7 @@
 <template>
   <footer id="decretos">
     <div class="logo">
-      <a href="#">
+      <a href="#" v-scroll-to="'#inicio'">
         <img src="../assets/logos/covid-19.png" alt="logo-covid" />
       </a>
     </div>
@@ -56,15 +56,16 @@
         <ul>
           <li>
             <a
-              href="../../public/pdf/comunicado-covid-alerta-geral-versao-2.pdf"
-              download
+              href="documentos/comunicado-covid-alerta-geral-versao-2.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               title="Comunicado covid-19 alerta geral"
               >Comunicado covid-19 (Alerta geral)</a
             >
           </li>
           <li>
             <a
-              href="../assets/pdf/recomendacoes-para-quarentena-domiciliar.pdf"
+              href="documentos/recomendacoes-para-quarentena-domiciliar.pdf"
               target="_blank"
               rel="noopener noreferrer"
               title="Recomendações para quarentena domiciliar"
@@ -79,7 +80,7 @@
         <ul>
           <li>
             <a
-              href="../assets/pdf/decreto-legislativo-presidencial-provisorio-n-1-20-de-18-de-marco.pdf"
+              href="documentos/decreto-legislativo-presidencial-provisorio-n-1-20-de-18-de-marco.pdf"
               target="_blank"
               rel="noopener noreferrer"
               title="Decreto Legislativo Presidencial Provisório n.º 1/20 de 18 de Março"
@@ -88,7 +89,7 @@
           </li>
           <li>
             <a
-              href="../assets/pdf/decreto-legislativo-presidencial-provisorio-n-1-20-de-18-de-marco-versao-dr.pdf"
+              href="documentos/decreto-legislativo-presidencial-provisorio-n-1-20-de-18-de-marco-versao-dr.pdf"
               target="_blank"
               rel="noopener noreferrer"
               title="Decreto Legislativo Presidencial Provisório n.º 1/20 de 18 de Março(Versão DR)"
