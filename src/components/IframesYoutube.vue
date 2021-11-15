@@ -10,8 +10,13 @@
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        class="youtube"
+        v-show="visible"
       ></iframe>
     </div>
+
+    <LoadingYoutube :active="visible" :error="error" />
+
     <div class="button">
       <a
         href="https://www.youtube.com/channel/UC7QLMVuPz9lg-0-_8YDm88A/search?query=covid"
@@ -26,25 +31,50 @@
 </template>
 
 <script>
+import LoadingYoutube from "../components/LoadingYoutube.vue";
 import https from "../services/https";
 export default {
   name: "SliderYoutube",
 
+  components: {
+    LoadingYoutube,
+  },
+
   created() {
-    https
-      .get(
-        "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwENLyoscBz2Nl_L9HWNvAIzLDinUxh8&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date&maxResults=2&q=covid-19"
-      )
-      .then((data) => {
-        this.videos = data.data.items;
-      })
-      .catch(() => {});
+    this.getYoutube();
   },
 
   data() {
     return {
       videos: {},
+      error: {
+        text: "",
+      },
+      visible: false,
     };
+  },
+
+  methods: {
+    getYoutube() {
+      https
+        .get(
+          "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwENLyoscBz2Nl_L9HWNvAIzLDinUxh8&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date&maxResults=2&q=covid-19"
+        )
+        .then((data) => {
+          this.videos = data.data.items;
+          this.visible = true;
+        })
+        .catch(() => {
+          this.visible = false;
+          setTimeout(() => {
+            this.error.text = "Ops! Alguma coisa deu errado.";
+          }, 2000);
+        });
+    },
+
+    videoReady() {
+      this.visible = true;
+    },
   },
 };
 </script>
@@ -65,7 +95,7 @@ export default {
   flex-wrap: wrap;
 }
 
-.container-covid .videos iframe {
+.container-covid .videos .youtube {
   width: 640px;
   height: 400px;
   padding: 20px;
@@ -96,7 +126,7 @@ export default {
 }
 
 @media screen and (max-width: 670px) {
-  .container-covid .videos iframe {
+  .container-covid .videos .youtube {
     width: 100%;
     height: 250px;
     padding: 20px;
