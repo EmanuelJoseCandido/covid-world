@@ -32,7 +32,7 @@
 
 <script>
 import LoadingYoutube from "../components/LoadingYoutube.vue";
-import https from "../services/https";
+import api from "../services/api";
 export default {
   name: "SliderYoutube",
 
@@ -56,7 +56,7 @@ export default {
 
   methods: {
     getYoutube() {
-      https
+      api
         .get(
           "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwENLyoscBz2Nl_L9HWNvAIzLDinUxh8&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date&maxResults=2&q=covid-19"
         )
