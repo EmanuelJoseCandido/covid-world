@@ -6,7 +6,7 @@
       height="2.5px"
       backgroundColor="linear-gradient(to right, #fa705c, #ea4659)"
     />
-    <back-to-top>
+    <back-to-top bottom="30px">
       <button type="button" class="back-to-top">
         <v-icon name="chevron-up" class="icon" />
       </button>
@@ -48,8 +48,6 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-
-/* ea4659 */
 
 @media screen and (max-width: 858px) {
   .back-to-top {
