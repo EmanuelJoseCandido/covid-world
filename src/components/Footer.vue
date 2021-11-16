@@ -146,17 +146,15 @@ footer .info .container ul {
   padding: 0;
 }
 
-footer .info .container ul li {
-  padding: 5px 0px;
-}
-
-footer .info .container ul li a {
+footer .info .container a {
+  display: block;
+  padding: 8px 0;
   color: var(--color-gray);
   text-decoration: none;
   transition: all 650ms ease-in-out;
 }
 
-footer .info .container ul li a:hover {
+footer .info .container a:hover {
   color: var(--color-red);
 }
 
