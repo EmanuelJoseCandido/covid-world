@@ -13,9 +13,9 @@
 
       <div class="container-nav">
         <ul class="links">
-          <div class="menu-icons">
+          <li class="menu-icons">
             <v-icon name="times" class="icon times" />
-          </div>
+          </li>
 
           <li><a href="#" v-scroll-to="'#inicio'">Início</a></li>
           <li>
