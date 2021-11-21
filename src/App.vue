@@ -1,5 +1,11 @@
 <template>
   <div id="app">
+    <div class="home">
+      <Header />
+      <Hero />
+      <Main />
+      <Footer />
+    </div>
     <router-view />
     <modals-container></modals-container>
     <vue-scroll-progress-bar
@@ -15,15 +21,31 @@
 </template>
 
 <script>
-import { ModalsContainer } from "vue-final-modal";
+import Header from "./components/Header.vue";
+import Hero from "./components/Hero.vue";
+import Main from "./components/Main.vue";
+import Footer from "./components/Footer.vue";
+
 export default {
   components: {
-    ModalsContainer,
+    Header,
+    Hero,
+    Main,
+    Footer,
   },
 };
 </script>
 
 <style>
+:root {
+  --color-red: #ea4659;
+  --color-green: #42b984;
+  --color-rose: #fa705c;
+  --color-gray: #2c3e50;
+  --color-small-gray: #f2f2f2;
+  --color-white: #ffffff;
+}
+
 html,
 body {
   margin: 0;
@@ -36,6 +58,7 @@ body {
   justify-content: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: italic;
   color: #455a64;
 }
 
