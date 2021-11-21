@@ -99,6 +99,17 @@
         </ul>
       </div>
     </div>
+
+    <div class="author">
+      Desenvolvido por:
+      <a
+        href="https://emanueljosecandido.github.io"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Emanuel Cândido.</a
+      >
+    </div>
   </footer>
 </template>
 <style scoped>
@@ -108,7 +119,7 @@ footer {
   color: var(--color-gray);
   display: flex;
   flex-direction: column;
-  padding: 50px 0 20px 0;
+  padding-top: 50px;
 }
 
 footer .titulo {
@@ -156,6 +167,29 @@ footer .info .container a {
 
 footer .info .container a:hover {
   color: var(--color-red);
+}
+
+footer .author {
+  background: var(--color-gray);
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding: 10px 30px;
+}
+
+footer .author a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 650ms ease-in-out;
+}
+
+footer .author a:hover {
+  color: var(--color-small-gray);
 }
 
 @media screen and (max-width: 858px) {
