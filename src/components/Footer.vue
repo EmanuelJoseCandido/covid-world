@@ -102,16 +102,24 @@
 
     <div class="author">
       Desenvolvido por:
-      <a
-        href="https://emanueljosecandido.github.io"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Emanuel Cândido.</a
-      >
+      <button @click="showModalAuthor">Emanuel Cândido.</button>
     </div>
   </footer>
 </template>
+<script>
+import ModalAuthor from "./ModalAuthor.vue";
+export default {
+  name: "Footer",
+
+  methods: {
+    showModalAuthor() {
+      this.$vfm.show({
+        component: ModalAuthor,
+      });
+    },
+  },
+};
+</script>
 <style scoped>
 footer {
   width: 100%;
@@ -181,14 +189,17 @@ footer .author {
   padding: 10px 30px;
 }
 
-footer .author a {
+footer .author button {
+  background: transparent;
   color: var(--color-white);
+  border: none;
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
   transition: all 650ms ease-in-out;
 }
 
-footer .author a:hover {
+footer .author button:hover {
   color: var(--color-small-gray);
 }
 
