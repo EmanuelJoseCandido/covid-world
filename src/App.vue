@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <div class="home">
+    <div class="content">
       <Header />
       <Hero />
       <Main />
       <Footer />
     </div>
-    <router-view />
-    <modals-container></modals-container>
     <vue-scroll-progress-bar
       height="2.5px"
       backgroundColor="linear-gradient(to right, #fa705c, #ea4659)"
@@ -27,6 +25,8 @@ import Main from "./components/Main.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
+  name: "App",
+
   components: {
     Header,
     Hero,
