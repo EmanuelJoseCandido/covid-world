@@ -15,6 +15,7 @@
         <v-icon name="chevron-up" class="icon" />
       </button>
     </back-to-top>
+    <modals-container></modals-container>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import Header from "./components/Header.vue";
 import Hero from "./components/Hero.vue";
 import Main from "./components/Main.vue";
 import Footer from "./components/Footer.vue";
+import { ModalsContainer } from "vue-final-modal";
 
 export default {
   name: "App",
@@ -32,6 +34,7 @@ export default {
     Hero,
     Main,
     Footer,
+    ModalsContainer,
   },
 };
 </script>

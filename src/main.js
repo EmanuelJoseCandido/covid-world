@@ -3,6 +3,7 @@ import App from "./App.vue";
 import VueNumber from "vue-number-animation";
 import Icon from "vue-awesome/components/Icon";
 import VueScrollProgressBar from "@guillaumebriday/vue-scroll-progress-bar";
+import { vfmPlugin } from "vue-final-modal";
 import BackToTop from "vue-backtotop";
 import VueScrollTo from "vue-scrollto";
 import "./plugins/icons";
@@ -12,6 +13,15 @@ Vue.component("v-icon", Icon);
 Vue.use(VueScrollProgressBar);
 Vue.use(BackToTop);
 Vue.use(VueNumber);
+
+Vue.use(
+  vfmPlugin({
+    key: "$vfm",
+    componentName: "VueFinalModal",
+    dynamicContainerName: "ModalsContainer"
+  })
+);
+
 Vue.use(VueScrollTo, {
   duration: 700,
   easing: "ease",
