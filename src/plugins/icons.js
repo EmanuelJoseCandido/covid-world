@@ -5,3 +5,6 @@ import "vue-awesome/icons/bars";
 import "vue-awesome/icons/spinner";
 import "vue-awesome/icons/play";
 import "vue-awesome/icons/chevron-up";
+import "vue-awesome/icons/code";
+import "vue-awesome/icons/brands/github";
+import "vue-awesome/icons/brands/linkedin";
