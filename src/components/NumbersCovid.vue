@@ -512,6 +512,7 @@ export default {
         selectedCountry: null,
         isLoadingCountry: false,
       },
+      apiKeyIpdata: process.env.VUE_APP_IPDATA_API_KEY,
     };
   },
 
@@ -531,7 +532,7 @@ export default {
     getCodeISO() {
       api
         .get(
-          "https://api.ipdata.co/?api-key=68202fe14f4c400b719bad0626e5e74a476af993e8b0b808619e3f32"
+          `https://api.ipdata.co/?api-key=${this.apiKeyIpdata}`
         )
         .then((data) => {
           this.getDataCountryAPI(data.data.country_name);

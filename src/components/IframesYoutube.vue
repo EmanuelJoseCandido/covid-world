@@ -46,6 +46,7 @@ export default {
 
   data() {
     return {
+      apiKeyYoutube: process.env.VUE_APP_YOUTUBE_API_KEY,
       videos: {},
       error: {
         text: "",
@@ -58,7 +59,7 @@ export default {
     getYoutube() {
       api
         .get(
-          "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwENLyoscBz2Nl_L9HWNvAIzLDinUxh8&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date&maxResults=2&q=covid-19"
+          `https://www.googleapis.com/youtube/v3/search?key=${this.apiKeyYoutube}&channelId=UC7QLMVuPz9lg-0-_8YDm88A&part=snippet,id&order=date&maxResults=2&q=covid-19`
         )
         .then((data) => {
           this.videos = data.data.items;
