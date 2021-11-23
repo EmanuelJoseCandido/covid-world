@@ -127,7 +127,7 @@ footer {
   color: var(--color-gray);
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
+  padding-top: 70px;
 }
 
 footer .titulo {
@@ -138,7 +138,7 @@ footer .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 footer .logo img {
@@ -147,6 +147,7 @@ footer .logo img {
 
 footer .info {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0 80px;
 }
@@ -195,6 +196,7 @@ footer .author button {
   border: none;
   text-decoration: none;
   font-weight: bold;
+  font-style: italic;
   cursor: pointer;
   transition: all 650ms ease-in-out;
 }
