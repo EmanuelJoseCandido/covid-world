@@ -65,6 +65,14 @@ body {
   color: #455a64;
 }
 
+header,
+main,
+footer,
+.content,
+.commission {
+  width: 100%;
+}
+
 .back-to-top {
   background: var(--color-red);
   color: var(--color-white);
