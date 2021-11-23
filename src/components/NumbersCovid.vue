@@ -831,7 +831,6 @@ table thead th {
 
 table thead th:nth-child(1) {
   border-top-left-radius: 8px;
-  border-left: 1px solid var(--color-gray);
 }
 
 table thead th:nth-child(5) {
